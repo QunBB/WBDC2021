@@ -1,0 +1,40 @@
+ModelConfig:
+  user_mlp_size: [256]
+  feed_mlp_size: [256]
+  logits_size: [128]
+  input_dropout: 0.1
+  dropout: 0.3
+  l2_reg: 0.0001
+  user_vocab_dict:
+    userid: 256
+    device: 2
+  feed_vocab_dict:
+    feedid: 106445
+    authorid: 0
+    bgm_song_id: 0
+    bgm_singer_id: 0
+    tag: 0
+    videoplayseconds: 8
+  emb_file:
+    userid: "data/deepwalk/userid.npy"
+    feedid: "data/deepwalk/feedid.npy"
+    authorid: "data/deepwalk/authorid.npy"
+    bgm_song_id: "data/deepwalk/bgm_song_id.npy"
+    bgm_singer_id: "data/deepwalk/bgm_singer_id.npy"
+    tag: "data/deepwalk/tag.npy"
+  emb_dim_dict:
+    device: 64
+
+OptimizerConfig:
+  init_lr: 0.0001
+  num_train_steps: 195312 # 5000000 / 128 * 5
+  num_warmup_steps: 19531
+  train_log_steps: 100
+  run_eval_steps: 1000
+  steps_every_eval: 500
+  save_model_steps: 5000
+  model_path: "data/model/match_tower.ckpt"
+  train_batch_size: 128
+  eval_batch_size: 128
+  num_gpu: 2
+

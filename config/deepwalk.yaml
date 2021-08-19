@@ -1,0 +1,13 @@
+Word2Vec:
+  window: 7
+  size: 512
+  min_count: 1
+  workers: 10
+  iter: 10
+  sg: 1
+
+DeepWalk:
+  epochs: 10
+  max_depth: 20
+  min_depth: 2
+  pool: 20

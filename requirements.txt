@@ -1,0 +1,11 @@
+tensorflow_hub==0.7
+tensorflow-gpu==1.15  # GPU version of TensorFlow
+sentencepiece
+gensim==3.8.3
+pandas
+PyYAML
+tqdm
+matplotlib
+sklearn
+recordclass
+numba

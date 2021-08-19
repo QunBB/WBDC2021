@@ -1,0 +1,57 @@
+ModelName: "PLE"
+ModelConfig:
+  max_seq_len: 20
+  sharing_size: [1024, 512]
+  specific_size: [256, 128]
+  dropout: 0.3
+  negative_decay:
+    read_comment: 0.9
+    like: 0.8
+    click_avatar: 0.5
+    forward: 0.4
+  loss_weight:
+    read_comment: 4
+    like: 3
+    click_avatar: 2
+    forward: 1
+  l2_reg: 0.0001
+  behaviors_num: 7
+  emb_file:
+    userid: "data/deepwalk/userid.npy"
+    feedid: "data/deepwalk/feedid.npy"
+    authorid: "data/deepwalk/authorid.npy"
+    bgm_song_id: "data/deepwalk/bgm_song_id.npy"
+    bgm_singer_id: "data/deepwalk/bgm_singer_id.npy"
+    tag: "data/deepwalk/tag.npy"
+  vocab_size_dict:
+    feedid: 106445
+    device: 2
+    userid: 20000
+    authorid: 0
+    bgm_song_id: 0
+    bgm_singer_id: 0
+    tag: 0
+    videoplayseconds: 8
+  emb_dim_dict:
+    feedid: 512
+    device: 128
+    authorid: 512
+    author: 128
+    bgm_song_id: 128
+    bgm_singer_id: 128
+    tag: 128
+    videoplayseconds: 128
+
+OptimizerConfig:
+  init_lr: 0.0001
+  num_train_steps: 195312 # 5000000 / 128 * 5
+  num_warmup_steps: 19531
+  train_log_steps: 100
+  run_eval_steps: 1000
+  steps_every_eval: 500
+  save_model_steps: 5000
+  model_path: "data/model/ple_model.ckpt"
+  train_batch_size: 128
+  eval_batch_size: 128
+  num_gpu: 2
+
