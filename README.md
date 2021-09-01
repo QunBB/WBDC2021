@@ -1,5 +1,7 @@
 # 2021微信大数据挑战赛：https://algo.weixin.qq.com/
 
+详细介绍见：https://zhuanlan.zhihu.com/p/399218898
+
 # 环境依赖
 
 Python: 3.6
